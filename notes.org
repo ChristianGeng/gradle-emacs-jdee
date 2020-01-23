@@ -1,0 +1,57 @@
+
+* Links
+
+Man kann es [[https://github.com/mwhipple/gradle-emacs-jdee.git][hier]] runterladen
+Gemäss README wurde dieses Plugin [[http://ignatyev-dev.blogspot.com/2013/07/gradle-projects-in-jdee.html][hier]] inspiriert.
+
+Wie man es anwenden muss findet sich [[https://plugins.gradle.org/plugin/com.mattwhipple.emacs-jdee][hier.]]
+
+* gradle tasks
+
+** Publish
+da fehlen einem dann die keys:
+#+begin_src bash
+./gradlew publishPlugins
+#+end_src
+
+** Build it with
+
+#+begin_src bash
+./gradlew buid
+#+end_src
+
+** Auf ein Projekt anwenden
+
+#+begin_src bash
+./gradlew jdee
+#+end_src
+
+
+* gradle Plugin lokal debuggen
+
+- Der Ordner src der Pluginquellen kommt in den Ordner buidSrc, dann kann man damit normal lokal arbeiten.
+
+* Start IntelliJ
+
+#+begin_src
+cd /home/christian/idea-IC-193.5662.53/bin
+./idea.sh
+#+end_src
+
+jetzt einfach das inteelij alias:
+
+#+begin_src
+intellij
+#+end_src
+
+
+
+* Message für den Pull Request
+
+// task wrapper(type: Wrapper) {
+//     gradleVersion='5.0'
+// }
+// /opt/gradle/gradle-5.0/bin/gradle wrapper --gradle-version 5.0
+// https://stackoverflow.com/questions/53709282/cannot-add-task-wrapper-as-a-task-with-that-name-already-exists
+// /opt/gradle/gradle-5.0/bin/
+// https://stackoverflow.com/questions/55793095/could-not-find-method-leftshift-for-arguments-after-updating-studio-3-4
