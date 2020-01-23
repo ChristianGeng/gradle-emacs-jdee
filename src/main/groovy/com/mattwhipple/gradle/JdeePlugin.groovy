@@ -8,7 +8,7 @@ class JdeePlugin implements Plugin<Project> {
 
     "(jdee-project-file-version" (["1.0"])
     "(jdee-set-variables" {
-      "'(jdee-compile-option-directory" ([project.sourceSets.main.output.classesDir])
+      "'(jdee-compile-option-directory" ([project.sourceSets.main.output.classesDir.filter])
       "'(jdee-junit-working-directory" ([project.projectDir])
 
       "'(jdee-compile-option-source" {
@@ -44,7 +44,8 @@ class JdeePlugin implements Plugin<Project> {
   @Override
   void apply(Project project) {
 
-    project.task("jdee") << {
+    project.task("jdee") {
+      doLast {
       def output = new File(project.projectDir, "prj.el").newPrintWriter()
       try {
 
@@ -77,6 +78,7 @@ class JdeePlugin implements Plugin<Project> {
           output.flush()
       }
     }
+  } // meine
   }
 
 }
